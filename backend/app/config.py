@@ -43,6 +43,9 @@ class Config:
         MODELS_DIR = PROJECT_ROOT / MODELS_DIR
 
     METRICS_DIR = PROJECT_ROOT / "outputs" / "metrics"
+    METRICS_CSV = METRICS_DIR / "ml_model_comparison.csv"
+    PROCESSED_DATA_DIR = PROJECT_ROOT / "data" / "processed"
+    TRENDS_CSV = PROCESSED_DATA_DIR / "hourly_fraud_trends.csv"
     SAMPLE_DATA_PATH = PROJECT_ROOT / "data" / "sample" / "sample_transactions.csv"
 
     _db_url = os.getenv("DATABASE_URL", "")

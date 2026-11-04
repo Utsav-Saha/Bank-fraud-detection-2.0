@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
+# pyrefly: ignore[missing-import]
 from app.extensions import db
 
 
@@ -23,7 +24,12 @@ class Transaction(db.Model):
     risk_level = db.Column(db.String(32), nullable=False, index=True)
     model_name = db.Column(db.String(64), nullable=False, index=True)
     anomaly_flag = db.Column(db.Integer, nullable=False, default=0)
+    review_status = db.Column(db.String(32), nullable=False, default="UNREVIEWED", index=True)
     created_at = db.Column(db.DateTime(timezone=True), nullable=False, default=utc_now, index=True)
+
+    @property
+    def prediction_label(self) -> str:
+        return "Fraud" if self.prediction == 1 else "Legitimate"
 
     alerts = db.relationship(
         "FraudAlert",

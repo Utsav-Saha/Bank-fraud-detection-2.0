@@ -1,0 +1,2 @@
+Model,Architecture,Accuracy,Precision,Recall,F1 Score,ROC-AUC,PR-AUC,Training Time (sec)
+Artificial Neural Network (ANN),Dense(64)-BatchNorm-Dense(32)-BatchNorm-Dense(16)-Sigmoid,0.998766432876326,0.5984251968503937,0.8,0.6846846846846847,0.9493632759769186,0.7862459823078098,22.23

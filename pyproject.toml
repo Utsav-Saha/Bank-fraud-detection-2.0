@@ -1,0 +1,4 @@
+[tool.pyrefly]
+# Tell Pyrefly that `backend/` is a source root so `app.*` resolves correctly.
+# This eliminates the need for `# pyrefly: ignore[missing-import]` comments.
+source_paths = ["backend", "."]

@@ -1,5 +1,4 @@
 """HTTP blueprints."""
-
-from app.routes.health_routes import health_bp
-
-__all__ = ["health_bp"]
+# Blueprint objects are imported and registered lazily inside
+# app._register_blueprints() to avoid circular-import issues at
+# package initialisation time.

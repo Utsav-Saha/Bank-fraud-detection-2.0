@@ -32,6 +32,7 @@ class FraudExplainer:
     def _init_shap(self):
         """Attempts to initialize SHAP TreeExplainer with graceful fallback."""
         try:
+            # pyrefly: ignore [missing-import]
             import shap
             # Use small background sample if needed
             self.tree_explainer = shap.TreeExplainer(self.rf_model)

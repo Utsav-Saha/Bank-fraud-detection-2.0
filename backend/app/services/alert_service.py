@@ -4,7 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
+# pyrefly: ignore[missing-import]
 from app.extensions import db
+# pyrefly: ignore[missing-import]
 from app.models.database_models import FraudAlert, InvestigationRecord, Transaction
 
 
@@ -15,7 +17,6 @@ def persist_prediction(result: dict[str, Any]) -> Transaction:
             transaction_id=result["transaction_id"],
             transaction_amount=float(result.get("transaction_amount_input") or 0.0),
             prediction=int(result["prediction"]),
-            prediction_label=result["prediction_label"],
             fraud_probability=float(result["fraud_probability"]),
             risk_score=float(result["risk_score"]),
             risk_level=result["risk_level"],
@@ -27,7 +28,6 @@ def persist_prediction(result: dict[str, Any]) -> Transaction:
         record = existing
         record.transaction_amount = float(result.get("transaction_amount_input") or 0.0)
         record.prediction = int(result["prediction"])
-        record.prediction_label = result["prediction_label"]
         record.fraud_probability = float(result["fraud_probability"])
         record.risk_score = float(result["risk_score"])
         record.risk_level = result["risk_level"]
