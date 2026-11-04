@@ -16,7 +16,7 @@ Detects fraudulent credit card transactions in real-time using ensemble machine 
 
 <br/>
 
-🔗 **Live Demo:** [bank-fraud-detection-ai.streamlit.app](https://bank-fraud-detection-ai.streamlit.app/)
+🔗 **Live Demo:** [bank-fraud-detection-ai.streamlit.app](https://securebank.streamlit.app/)
 
 </div>
 
